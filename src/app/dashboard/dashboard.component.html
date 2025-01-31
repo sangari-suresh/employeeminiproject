@@ -1,0 +1,18 @@
+<div class="parent">
+
+        <div class="left">
+        <h1>Dashboard</h1>
+        <h3 routerLink="home">Home</h3>
+        <h3 routerLink="all-employees">All Employees</h3>
+
+        <button (click)="logout()">Logout</button>
+        
+        </div>
+
+        
+        <div class="right">
+            <router-outlet></router-outlet>
+        </div>
+    
+
+</div>

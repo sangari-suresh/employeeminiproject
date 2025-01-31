@@ -1,0 +1,86 @@
+<h1>All Employees</h1>
+
+
+<input type="text" [(ngModel)]="term" (keyup)="filter()">
+
+<select [(ngModel)]="column">
+    <option>name</option>
+    <option>company</option>
+    <option>role</option>
+    <option>package</option>
+    <option>email</option>
+    <option>id</option>
+    
+
+</select>
+
+<select [(ngModel)]="order">
+    <option>asc</option>
+    <option>desc</option>
+</select>
+<button class="btn btn-primary" (click)="sort()">sort</button>
+
+<select [(ngModel)]="limit">
+    <option>10</option>
+    <option>20</option>
+    <option>30</option>
+    <option>40</option>
+    <option>50</option>
+</select>
+
+<select [(ngModel)]="page">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+</select>
+
+<button class="btn btn-primary" (click)="paginated()">pagination</button><br>
+
+<!-- <button class="btn btn-info" (click)="hike()">Add 1lakh hike</button> -->
+
+<button class="btn btn-danger" routerLink="/dashboard/create-employees">Create employee</button>
+
+
+
+<table class="table table-dark table-hover table-striped table-bordered" >
+<thead>
+    <tr>
+        <th>S No</th>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Role</th>
+        <th>Package</th>
+        <th>Email</th>
+        <th>D.O.B</th>
+        <th>ID</th>
+        <th>Address</th>
+        <th>Hikes</th>
+        <th colspan="3">Actions</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let allemployees of allemployees, let i=index">
+        <td>{{i+1}}</td>
+        <td>{{allemployees.name}}</td>
+        <td>{{allemployees.company}}</td>
+        <td>{{allemployees.role}}</td>
+        <td [ngStyle]="{'color':allemployees.package<=900000 ? 'red':'green'}">{{allemployees.package}}</td>
+        <td>{{allemployees.email}}</td>
+        <td>{{allemployees.dob}}</td>
+        <td>{{allemployees.id}}</td>
+        <td>{{allemployees.address.addressline}},{{allemployees.address.city}},{{allemployees.address.state}},{{allemployees.address.pincode}}</td>
+        <td *ngFor="let hike of allemployees.hikes">{{hike.year}}-{{hike.percentage}}%</td>
+        <td>
+            <button class="btn btn-danger" routerLink="/dashboard/allemployeesdetails/{{allemployees.id}}">view</button>
+        </td>
+        <td>
+            <button class="btn btn-info" routerLink="/dashboard/edit-details/{{allemployees.id}}">Edit</button>
+        </td>
+        <td>
+            <button class="btn btn-danger" (click)="delete(allemployees.id)">Delete</button>
+        </td>
+       
+    </tr>
+</tbody>
+
+</table>

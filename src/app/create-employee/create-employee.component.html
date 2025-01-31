@@ -1,0 +1,61 @@
+<h1>{{id ? 'Edit allemployees' : 'Create allemployees'}}</h1>
+<h1 *ngIf="id"></h1>
+<h1 *ngIf="!id"></h1>
+
+<form action="" [formGroup]="allemployeesForm">
+
+    <label for="">Name</label>
+    <input type="text" formControlName="name"><br>
+
+    
+    <label for="">Company</label>
+    <input type="text" formControlName="company"><br>
+    
+    <label for="">Role</label>
+    <input type="text" formControlName="role"><br>
+    
+    <label for="">Package</label>
+    <input type="text" formControlName="package"><br>
+    
+    <label for="">Email</label>
+    <input type="text" formControlName="email"><br>
+    
+    <label for="">DOB</label>
+    <input type="date" formControlName="dob"><br>
+
+    
+    <div formGroupName="address">
+        <label for="">Address Line</label>
+        <input type="text" formControlName="address line"/><br>
+
+        <label for="">City</label>
+        <input type="text" formControlName="City"/><br>
+
+        <label for="">State</label>
+        <input type="text" formControlName="state"/><br>
+
+        <label for="">Pincode</label>
+        <input type="number" formControlName="pincode"/><br>
+    </div>
+
+    <label>Type:</label>
+    <input type="radio" name="type" formControlName="type" value="work from office">
+    <label>Work From Office</label>
+    <input type="radio" name="type" formControlName="type" value="remote">
+    <label>Remote</label>
+
+    <div *ngIf="allemployeesForm.get('type')?.value=='work from office'">
+        <label for="">Travel Fee:</label>
+        <input type="number" formControlName="travel fee">
+    </div>
+
+    <div *ngIf="allemployeesForm.get('type')?.value=='remote'">
+        <label for="">WiFi bill:</label>
+        <input type="number" formControlName="wifi bill">
+    </div>
+
+    
+    <button class="btn btn-info" (click)="submit()">submit</button>
+
+
+</form>
