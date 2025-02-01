@@ -71,7 +71,7 @@
         <td>{{allemployees.address.addressline}},{{allemployees.address.city}},{{allemployees.address.state}},{{allemployees.address.pincode}}</td>
         <td *ngFor="let hike of allemployees.hikes">{{hike.year}}-{{hike.percentage}}%</td>
         <td>
-            <button class="btn btn-danger" routerLink="/dashboard/allemployeesdetails/{{allemployees.id}}">view</button>
+            <button class="btn btn-danger" routerLink="/dashboard/allemployeesdetails/{{allemployees.id}}">View</button>
         </td>
         <td>
             <button class="btn btn-info" routerLink="/dashboard/edit-details/{{allemployees.id}}">Edit</button>

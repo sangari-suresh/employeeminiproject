@@ -34,7 +34,7 @@ export class CreateEmployeeComponent {
       console.log(data.id);
       this.id=data.id;
 
-      _allemployeesService.getallemployee(data.id).subscribe(
+     this._allemployeesService.getallemployee(data.id).subscribe(
         (data:any)=>{
           console.log(data);
           this.allemployeesForm.patchValue(data);
@@ -45,8 +45,7 @@ export class CreateEmployeeComponent {
   }
 
 
-  public allemployeesForm:FormGroup=new FormGroup(
-    {
+  public allemployeesForm:FormGroup=new FormGroup({
       name:new FormControl(),
       company:new FormControl(),
       role:new FormControl(),
@@ -76,7 +75,7 @@ export class CreateEmployeeComponent {
          alert("Internal server Error")
        }
       
-      );
+      )
 
     }else{
    this._allemployeesService.createallemployees(this.allemployeesForm.value).subscribe(

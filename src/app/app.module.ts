@@ -27,7 +27,8 @@ import { AllemployeesdetailsComponent } from './allemployeesdetails/allemployees
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
+    
     
     
     

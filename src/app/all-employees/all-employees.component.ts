@@ -15,7 +15,6 @@ hikes: any;
 constructor(private _allemployeesService:AllemployeesService){
   this.pageload();
 }
-
 pageload(){
   this._allemployeesService.getallemployees().subscribe(
     (data:any)=>{

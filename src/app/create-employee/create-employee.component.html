@@ -2,6 +2,7 @@
 <h1 *ngIf="id"></h1>
 <h1 *ngIf="!id"></h1>
 
+
 <form action="" [formGroup]="allemployeesForm">
 
     <label for="">Name</label>
@@ -53,9 +54,16 @@
         <label for="">WiFi bill:</label>
         <input type="number" formControlName="wifi bill">
     </div>
+<br>
+    <label for="">Hikes</label>
+    <input type="number" formControlName="hikes"><br>
+
+    <label for="">percentage</label>
+    <input type="number" formControlName="percentage"><br>
 
     
     <button class="btn btn-info" (click)="submit()">submit</button>
 
 
 </form>
+

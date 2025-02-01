@@ -14,7 +14,7 @@ export class DashboardComponent {
       sessionStorage.removeItem("token");
       alert("logout successfully");
       this._router.navigateByUrl("/login");
-
+      
     }
   
     
